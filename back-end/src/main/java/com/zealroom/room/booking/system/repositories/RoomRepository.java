@@ -21,5 +21,7 @@ public interface RoomRepository extends JpaRepository<Room, String> {
     @Query("select r from Room r where r.capacity >= ?1")
     List<Room> findByCapacityGreaterThanEqual(Integer capacity);
 
+    @Query("SELECT MAX(r.capacity) from Room r where r.organization.id = ?1")
+    Integer getMaxRoomCapacityForOrganization(String organizationUuid);
 
 }

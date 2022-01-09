@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.relational.core.query.Criteria;
 import org.springframework.data.relational.core.query.Query;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import com.zealroom.room.booking.system.entities.Room;
 import com.zealroom.room.booking.system.entities.Booking;
@@ -72,6 +74,15 @@ public class RoomController {
         }
 
         return rooms;
+    }
+
+    @GetMapping("/maxCapacity/{uuid}")
+    public ResponseEntity getMaxCapacity(@PathVariable("uuid") String organizationUuid, @RequestHeader("session-token") String sessionToken){
+        Integer max = roomRepository.getMaxRoomCapacityForOrganization(organizationUuid);
+        if(max == null){
+            return new ResponseEntity<>("There are no rooms in the organization.", HttpStatus.OK);
+        }
+        return new ResponseEntity<>(max,HttpStatus.OK);
     }
 
     /*@GetMapping("/search")

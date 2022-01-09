@@ -1,7 +1,9 @@
 <div class="main-content">
   <div class="row">
     <div class="col-md-12">
-      <h2 style="color: #2c0092; font-family: Gargi;">Find a room according to your demands</h2>
+      <h2 style="color: #2c0092; font-family: Gargi">
+        Find a room according to your demands
+      </h2>
     </div>
   </div>
 
@@ -9,15 +11,21 @@
     <div class="col-md-12">
       <div class="search">
         <label>Room:</label>
-        <input type="search" id="room-search" placeholder="Search for exact room" class="form-control" />
+        <input
+          type="search"
+          id="room-search"
+          placeholder="Search for exact room"
+          class="form-control"
+        />
       </div>
     </div>
   </div>
 
   <div class="row">
     <div class="search">
-      <div class="col-md-4"><label for="validationCustom01" class="form-label">Date: </label>
-        <input [matDatepicker]="date">
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Date: </label>
+        <input [matDatepicker]="date" />
         <mat-datepicker-toggle [for]="date">Tap</mat-datepicker-toggle>
         <mat-datepicker #date></mat-datepicker>
       </div>
@@ -25,7 +33,7 @@
       <div class="col-md-4">
         <label>Start time:</label>
         <div class="ngx-timepicker-field-example">
-          <input  [ngxTimepicker]="startTime">
+          <input [ngxTimepicker]="startTime" />
           <ngx-material-timepicker #startTime></ngx-material-timepicker>
         </div>
       </div>
@@ -33,7 +41,7 @@
       <div class="col-md-4">
         <label>End time:</label>
         <div class="ngx-timepicker-field-example">
-          <input [ngxTimepicker]="endTime">
+          <input [ngxTimepicker]="endTime" />
           <ngx-material-timepicker #endTime></ngx-material-timepicker>
         </div>
       </div>
@@ -42,8 +50,15 @@
     <div class="row">
       <div class="col-md-12">
         <label>Capacity:</label>
-        <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" step="1000" [min]="minCapacity"
-          [max]="maxCapacity" aria-label="units"></mat-slider>
+        <mat-slider
+          thumbLabel
+          [displayWith]="formatLabel"
+          tickInterval="1"
+          step="1"
+          [min]="minCapacity"
+          [max]="maxCapacity"
+          aria-label="units"
+        ></mat-slider>
       </div>
     </div>
 
@@ -51,8 +66,14 @@
       <div class="search">
         <div class="col-md-12">
           <label for="validationCustom01" class="form-label">Equipment:</label>
-          <ng-select [items]="equipments"  bindLabel="name" placeholder="Select equipment" appendTo="body" [multiple]="true"
-            [(ngModel)]="selectedEquipments">
+          <ng-select
+            [items]="equipments"
+            bindLabel="name"
+            placeholder="Select equipment"
+            appendTo="body"
+            [multiple]="true"
+            [(ngModel)]="selectedEquipments"
+          >
           </ng-select>
         </div>
       </div>
@@ -61,11 +82,15 @@
     <div class="row">
       <div class="search">
         <div class="col-md-12">
-          <button type="button" class="btn btn-secondary btn-lg"
-            style="color: #ffffff; background-color: #2c0092;">Search</button>
+          <button
+            type="button"
+            class="btn btn-secondary btn-lg"
+            style="color: #ffffff; background-color: #2c0092"
+          >
+            Search
+          </button>
         </div>
       </div>
     </div>
-
-
   </div>
+</div>
